@@ -1,4 +1,4 @@
 # golden-log
 
-Iteration over files using tika-python to extract meta data.
+Use Pyhon to extract meta data via Apache Tika.
 Create dictionary with standardized keys from the main meta dump.  :poop:
