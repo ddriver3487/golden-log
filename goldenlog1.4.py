@@ -5,11 +5,24 @@ import sys
 import subkeys
 import requests
 import json
+import argparse
 
 
 def goldenlog():
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--full', '-f', help='Return full metadata values.')
+    parser.add_argument(
+        '--input', '-i', help='Provide file path after --input or -i argument')
+    parser.add_argument(
+        '--content', '-c', help='Return Content of the input file.'
+    )
+
+    args = parser.parse_args()
+
     # Use Path to convert file paths to correct format
-    absolute_path = (Path(sys.argv[1]))
+    absolute_path = (Path(args.input))
     file_name = absolute_path.name
     # change working directory to the files parent folder
     os.chdir(absolute_path.parent)
@@ -33,7 +46,7 @@ def goldenlog():
 
     # Iterate key values so output is easy to read
 
-    if sys.argv[2] == "FULL":
+    if args.full:
         for k, v in metadata.items():
             if v == '':
                 print(k, ':', 'None')
@@ -46,7 +59,7 @@ def goldenlog():
             else:
                 print(cw(k), ':', v)
 
-    if content != '':
+    if args.content and content != '':
         print("\n\n Below is the content of the file: ",
               file_name, '\n\n', content)
 
