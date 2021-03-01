@@ -1,7 +1,6 @@
 from pathlib import Path
 from string import capwords as cw
 import os
-import sys
 import subkeys
 import requests
 import json
