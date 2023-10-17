@@ -3,11 +3,11 @@ import tika
 from tika import detector, parser
 tika.initVM()
 
-mydir = (r'C:\Users\thexa\Documents\Development\Python\goldenlog\testfiles')
+myDir = (r'C:\Users\thexa\Documents\Development\Python\goldenlog\testfiles')
 
 uniqueKeys = list()
 
-for subdir, dirs, files in os.walk(mydir):
+for subdir, dirs, files in os.walk(myDir):
     for filename in files:
         filepath = subdir + os.sep + filename
 

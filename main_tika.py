@@ -1,8 +1,6 @@
-from getpaths_tika import get_paths
-from getexif_tika import get_exif
-from argparser_tika import arg_parser
-from pathlib import Path
+from include import get_paths, get_exif, arg_parser
 
+from pathlib import Path
 
 p = arg_parser()
 
